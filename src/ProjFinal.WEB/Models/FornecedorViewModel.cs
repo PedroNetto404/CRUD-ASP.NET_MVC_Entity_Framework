@@ -1,10 +1,14 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjFinal.WEB.Models
 {
     public class FornecedorViewModel
     {
+        public EnderecoViewModel Endereco { get; set; }
+        public IEnumerable<ProdutoViewModel> Produtos { get; set; }
+        
         [Key]
         public Guid Id { get; set; }
 
@@ -18,12 +22,8 @@ namespace ProjFinal.WEB.Models
 
         [DisplayName("Tipo")]
         public int TipoFornecedor { get; set; }
-
-        public EnderecoViewModel Endereco { get; set; }
-
+        
         [DisplayName("Ativo?")]
         public bool Ativo { get; set; }
-
-        public IEnumerable<ProdutoViewModel> Produtos { get; set; }
     }
 }
